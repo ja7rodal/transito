@@ -1,0 +1,8 @@
+class CreateBlasfemia < ActiveRecord::Migration[5.1]
+  def change
+    create_table :blasfemia do |t|
+
+      t.timestamps
+    end
+  end
+end

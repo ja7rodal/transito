@@ -1,0 +1,32 @@
+# == Schema Information
+#
+# Table name: vehicles
+#
+#  id               :integer          not null, primary key
+#  model            :integer
+#  brand            :string
+#  color            :string
+#  passenger_number :integer
+#  gearbox          :boolean
+#  serie            :string
+#  created_at       :datetime         not null
+#  updated_at       :datetime         not null
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  model: 1
+  brand: MyString
+  color: MyString
+  passengers: 1
+  gearbox: MyString
+  serie: MyString
+
+two:
+  model: 1
+  brand: MyString
+  color: MyString
+  passengers: 1
+  gearbox: MyString
+  serie: MyString
