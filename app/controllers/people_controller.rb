@@ -20,6 +20,25 @@ class PeopleController < ApplicationController
       render :edit
     end
   end
+
+  def new
+    @person_new = Person.new
+  end
+
+  def create
+    person = Person.new(person_params)
+    if person.save
+      redirect_to people_show_path(person)
+    else
+      render :new
+    end
+  end
+
+  def destroy
+    person = Person.find(params[:id])
+    person.destroy
+    redirect_to people_path 
+  end
   
   #strong params
   private

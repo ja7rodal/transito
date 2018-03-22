@@ -1,5 +1,10 @@
 <h1>Personas</h1>
 
+<div>
+  <%= button_tag(type: 'button', class:"btn btn-success" ) do %>
+    <%= link_to "Añadir", new_person_path   %>
+  <% end %>
+</div>
 <table class="table">
   <thead>
     <tr>
@@ -8,6 +13,7 @@
       <th>Apellido</th>
       <th>Detalle</th>
       <th>Editar</th>
+      <th>Eliminar</th>
     </tr>
   </thead>
   <tbody>
@@ -16,8 +22,9 @@
         <td><%= person.id %></td> 
         <td><%= person.name %></td> 
         <td><%= person.last_name %></td> 
-        <td><%= link_to "Ver", people_show_path(person.id)  %></td> 
-        <td><%= link_to "E", people_edit_path(person.id)  %></td> 
+        <td><%= link_to "Ver",person_path(person.id)  %></td> 
+        <td><%= link_to "E", edit_person_path(person.id)  %></td> 
+        <td><%= link_to "X", person_path(person.id), method: :delete, data: {confirm: "Estas seguro?"}  %></td> 
       </tr>
     <% end %>
   </tbody>

@@ -1,0 +1,2 @@
+class Cosa < ApplicationRecord
+end

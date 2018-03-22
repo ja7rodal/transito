@@ -1,0 +1,27 @@
+<%= form_with(model: cosa, local: true) do |form| %>
+  <% if cosa.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(cosa.errors.count, "error") %> prohibited this cosa from being saved:</h2>
+
+      <ul>
+      <% cosa.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :ref %>
+    <%= form.text_field :ref, id: :cosa_ref %>
+  </div>
+
+  <div class="field">
+    <%= form.label :value %>
+    <%= form.number_field :value, id: :cosa_value %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
