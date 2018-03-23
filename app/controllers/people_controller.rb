@@ -15,7 +15,7 @@ class PeopleController < ApplicationController
   def update
     @person = Person.find(params[:id])
     if @person.update(person_params)
-      redirect_to people_show_path(@person.id) 
+      redirect_to person_path(@person.id) 
     else
       render :edit
     end
@@ -28,7 +28,7 @@ class PeopleController < ApplicationController
   def create
     person = Person.new(person_params)
     if person.save
-      redirect_to people_show_path(person)
+      redirect_to person_path(person)
     else
       render :new
     end
