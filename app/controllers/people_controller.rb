@@ -22,13 +22,13 @@ class PeopleController < ApplicationController
   end
 
   def new
-    @person_new = Person.new
+    @person = Person.new
   end
 
   def create
-    person = Person.new(person_params)
-    if person.save
-      redirect_to person_path(person)
+    @person = Person.new(person_params)
+    if @person.save
+      redirect_to person_path(@person), flash: {notice: "Persona creada correctamente"} 
     else
       render :new
     end
